@@ -1,0 +1,158 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #1f1f3a, #2e2d4e);
+  min-height: 100vh;
+}
+
+.container-clientes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+h1 {
+  color: #FFF;
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.card-clientes {
+  display: flex;
+  align-items: center;
+  background-color: #363563;
+  padding: 15px;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  margin-bottom: 15px;
+  gap: 10px;
+  box-sizing: border-box;
+}
+
+.card-clientes:hover {
+  transform: translateY(-3px);
+}
+
+.texts {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-clientes p {
+  color: #fff;
+  margin: 2px 0;
+}
+
+.card-clientes button {
+  border-radius: 15px;
+  width: 100px;
+  flex-shrink: 0;
+  padding: 5px 10px;
+  background-color: #8b8ae1;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.card-clientes button:hover {
+  background-color: #6e6cd1;
+  transform: translateY(-2px);
+}
+
+input[type="number"] {
+  border: 1px solid #48456c;
+  border-radius: 12px;
+  height: 35px;
+  width: 60px;
+  flex-shrink: 0;
+  background-color: #2e2d4e;
+  color: #fff;
+  text-align: center;
+  font-size: 16px;
+  outline: none;
+}
+
+hr {
+  border: none;
+  height: 2px;
+  background-color: #fff;
+  margin-top: 1px;
+  margin-bottom: 10px;
+  width: 80%;
+}
+
+.logout-button {
+  background-color: #e14b4b;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 8px 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.logout-button:hover {
+  opacity: 0.8;
+}
+
+.btn-voltar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #8b8ae1;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 8px 16px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-decoration: none;
+}
+
+.btn-voltar:hover {
+  background-color: #6e6cd1;
+  transform: translateY(-2px);
+}
+
+.btn-voltar i {
+  margin-right: 8px;
+}
+
+.btn-voltar.sm {
+  padding: 6px 12px;
+  font-size: 12px;
+  border-radius: 10px;
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 24px;
+  }
+
+  .card-clientes {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+    gap: 8px;
+  }
+
+  .card-clientes button,
+  input[type="number"] {
+    width: 100%;
+  }
+
+  .btn-voltar {
+    width: 100%;
+    text-align: center;
+  }
+}

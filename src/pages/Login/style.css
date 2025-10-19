@@ -1,0 +1,85 @@
+.login-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 100px;
+}
+
+h1 {
+  color: #fff;
+  font-size: 32px;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 30px;
+  border-radius: 10px;
+  background-color: #2e2d4e;
+  max-width: 50%;
+  width: 400px;
+  margin-bottom: 20px;
+
+}
+
+button.login-acessar {
+  border-radius: 30px;
+  background-color: #676491;
+  height: 40px;
+  border: none;
+  font-weight: bold;
+}
+
+input {
+  border: 1px solid #48456c;
+  border-radius: 30px;
+  height: 40px;
+  background-color: #363653;
+  color: #fff;
+  font-size: 16px;
+  padding-left: 10px;
+  outline: none;
+
+}
+
+button.login-cadastro {
+  border-radius: 30px;
+  background-color: #fff;
+  height: 40px;
+  border: none;
+  font-weight: bold;
+  color: #363653;
+  width: 60%;
+  align-self: center;
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 24px;
+  }
+
+  form {
+    width: 90%;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  button.login-acessar,
+  button.login-cadastro {
+    width: 100%;
+    height: 40px;
+    font-size: 14px;
+  }
+
+  input {
+    width: 100%;
+    font-size: 14px;
+    height: 35px;
+  }
+
+  button.login-cadastro {
+    width: 100%;
+  }
+}
