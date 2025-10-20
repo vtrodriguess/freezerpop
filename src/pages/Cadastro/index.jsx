@@ -1,5 +1,5 @@
 import './style.css'
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import CryptoJS from 'crypto-js'
 import { useNavigate } from "react-router-dom";
 import api from '../../services/api'
