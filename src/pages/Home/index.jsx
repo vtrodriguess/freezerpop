@@ -37,14 +37,14 @@ function Home() {
 
   async function increase(idFreezer, qtt) {
     const customer = JSON.parse(localStorage.getItem("customer"));
-    await api.post('comprar', {
-      idCustomer: customer.id,
-      idFreezerPop: idFreezer,
-      quantity: Number(qtt)
-    })
-
-
-    window.location.reload()
+    if (qtt > 0) {
+      await api.post('comprar', {
+        idCustomer: customer.id,
+        idFreezerPop: idFreezer,
+        quantity: Number(qtt)
+      })
+      window.location.reload()
+    }
   }
 
   useEffect(() => {
@@ -76,7 +76,7 @@ function Home() {
         });
         setUser(response.data.name);
       } catch (error) {
-        console.error("Erro ao buscar balance:", error);
+        console.error("Erro ao buscar usuario:", error);
       }
     }
 

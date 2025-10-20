@@ -2,7 +2,7 @@ import './style.css'
 import { useRef } from 'react'
 import CryptoJS from 'crypto-js'
 import api from '../../services/api'
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 function Login() {
 
@@ -43,6 +43,9 @@ function Login() {
         <input placeholder="E-mail" name="email" type="email" ref={inputEmail} />
         <input placeholder="Senha" name="senha" type="password" ref={inputPassword} />
         <button type="button" className="login-acessar-ini" onClick={loginCustomer}>Acessar</button>
+        <Link to="/alterar-senha" className="btn-esqueci-senha">
+          Esqueci a senha
+        </Link>
         <button className='login-cadastro-ini' type="button" onClick={handleCadastro}>Cadastre-se</button>
       </form>
 

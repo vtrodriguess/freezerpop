@@ -10,6 +10,7 @@ import Admin from './pages/Admin';
 import Cliente from './pages/Cliente';
 import Geladinhos from './pages/Geladinhos';
 import CadastroGeladinho from './pages/CadastroGeladinho';
+import AlteraSenha from './pages/Altera-Senha';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -18,6 +19,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/" element={<Login />} />
         <Route path="/login" element={<Login />} />
         <Route path="/cadastro" element={<Cadastro />} />
+        <Route path="/alterar-senha" element={<AlteraSenha />} />
 
         <Route
           path="/home"
