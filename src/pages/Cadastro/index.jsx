@@ -10,18 +10,28 @@ function Cadastro() {
   const inputName = useRef()
   const inputEmail = useRef()
   const inputPassword = useRef()
-
+  const [error, setError] = useState("")
 
   async function createCustomer() {
     const password = inputPassword.current.value
-    await api.post('cliente/cadastrar', {
-      name: inputName.current.value,
-      email: inputEmail.current.value,
-      password: password
 
-    })
+    if (password.length < 8) {
+      setError("A senha deve ter pelo menos 8 caracteres")
+      return
+    }
+    setError("")
 
-    navigate("/login");
+    try {
+      await api.post('cliente/cadastrar', {
+        name: inputName.current.value,
+        email: inputEmail.current.value,
+        password: password
+      })
+      navigate("/login");
+    } catch (err) {
+      setError("Erro ao cadastrar usuário")
+      console.error(err)
+    }
   }
 
   return (
@@ -31,6 +41,7 @@ function Cadastro() {
         <input placeholder="Nome" name="nome" type="text" ref={inputName} />
         <input placeholder="E-mail" name="email" type="email" ref={inputEmail} />
         <input placeholder="Senha" name="senha" type="password" ref={inputPassword} />
+        {error && <p style={{ color: "red" }}>{error}</p>}
         <button type="button" className='cadastro-pessoa' onClick={createCustomer}>Cadastrar</button>
       </form>
 
