@@ -81,15 +81,22 @@ function Cliente() {
       {users
         .filter(user => user.role !== "ADMIN")
         .map((user) => (
-          <div key={user.id} className="card-clientes">
+          <div className="card-clientes">
             <div className="texts">
               <p><strong>Nome:</strong> {user.name}</p>
               <p><strong>Saldo:</strong> R$ {user.balance}</p>
             </div>
-            <button onClick={() => attBalance(user.id, amounts[user.id])}>Pago</button>
-            <input type="number" min="0" max={user.balance} step="1" disabled={user.balance === 0} onChange={(e) =>
-              setAmounts({ ...amounts, [user.id]: e.target.value })
-            } />
+            <div className="actions">
+              <button onClick={() => attBalance(user.id, amounts[user.id])}>Pago</button>
+              <input
+                type="number"
+                min="0"
+                max={user.balance}
+                step="1"
+                disabled={user.balance === 0}
+                onChange={(e) => setAmounts({ ...amounts, [user.id]: e.target.value })}
+              />
+            </div>
           </div>
         ))
       }

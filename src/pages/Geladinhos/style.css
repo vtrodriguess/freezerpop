@@ -142,18 +142,31 @@ hr {
   h1 {
     font-size: 24px;
     margin-bottom: 15px;
+    text-align: center;
   }
 
-  .card {
-    width: 90%;
+  .container-clientes,
+  .container-geladinhos-adm {
+    padding: 10px;
+  }
+
+  .card,
+  .card-clientes {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
+    width: 90%;
     padding: 10px;
     gap: 8px;
   }
 
-  .card button {
-    width: 100%;
+  .card button,
+  .card-clientes button,
+  .card input[type="number"],
+  .card-clientes input[type="number"] {
+    width: auto;
+    min-width: 80px;
+    padding: 5px 10px;
     font-size: 14px;
   }
 
@@ -163,27 +176,33 @@ hr {
     height: 35px;
   }
 
-  .top-buttons {
-    flex-direction: column;
-    width: 90%;
-  }
-
-  .top-buttons button,
-  .top-buttons .btn-voltar {
-    width: fit-content;
-    padding: 10px 20px;
-    margin: 5px auto;
-    text-align: center;
+  .actions {
     display: flex;
     justify-content: center;
-    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+    width: 100%;
+    flex-wrap: wrap;
   }
 
+  .top-buttons-clientes,
   .top-buttons {
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    justify-content: center;
     gap: 10px;
     width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .top-buttons-clientes button,
+  .top-buttons button,
+  .top-buttons .btn-voltar,
+  .top-buttons-clientes .btn-voltar {
+    width: auto;
+    min-width: 80px;
+    padding: 8px 16px;
+    font-size: 14px;
+    text-align: center;
   }
 
   .logout-button {
@@ -196,7 +215,6 @@ hr {
 
   .btn-voltar {
     background-color: #6c63ff;
-    position: static;
   }
 
   hr {

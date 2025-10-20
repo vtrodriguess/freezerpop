@@ -113,8 +113,10 @@ function Geladinhos() {
             <p><strong>Preço:</strong> R$ {user.price}</p>
             <p><strong>Quantidade:</strong> {user.quantity}</p>
           </div>
-          <button onClick={() => attQuantity(user.id, quantities[user.id])}>Adicionar</button>
-          <input type="number" min="0" step="1" onChange={(e) => handleChange(e, user.id)} />
+          <div className="actions">
+            <button onClick={() => attQuantity(user.id, quantities[user.id])}>Adicionar</button>
+            <input type="number" min="0" step="1" onChange={(e) => handleChange(e, user.id)} />
+          </div>
         </div>
       ))}
     </div>
