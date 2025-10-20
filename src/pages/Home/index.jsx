@@ -105,7 +105,7 @@ function Home() {
       <button type='button' onClick={handleLogout} className="logout-button">Sair</button>
       <h1>GELADINHO DA TÂMARA</h1>
       <div className="card1">
-        <p><strong>Saldo:</strong> R$ {balance.toFixed(2)}</p>
+        <p><strong>Total a pagar:</strong> R$ {balance.toFixed(2)}</p>
       </div>
 
       <hr />
