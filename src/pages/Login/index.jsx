@@ -26,6 +26,7 @@ function Login() {
     const customer = response.data.customer;
     localStorage.setItem("customer", JSON.stringify(customer));
     localStorage.setItem('token', token);
+    localStorage.setItem("role", customer.role);
 
     if (customer.role !== "ADMIN") {
       navigate("/home")

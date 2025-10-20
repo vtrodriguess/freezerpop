@@ -18,10 +18,11 @@ createRoot(document.getElementById('root')).render(
         <Route path="/" element={<Login />} />
         <Route path="/login" element={<Login />} />
         <Route path="/cadastro" element={<Cadastro />} />
+
         <Route
           path="/home"
           element={
-            <ProtectedRoute>
+            <ProtectedRoute allowedRoles={['USER']}>
               <Home />
             </ProtectedRoute>
           }
@@ -29,7 +30,7 @@ createRoot(document.getElementById('root')).render(
         <Route
           path="/admin"
           element={
-            <ProtectedRoute>
+            <ProtectedRoute allowedRoles={['ADMIN']}>
               <Admin />
             </ProtectedRoute>
           }
@@ -37,7 +38,7 @@ createRoot(document.getElementById('root')).render(
         <Route
           path="/clientes"
           element={
-            <ProtectedRoute>
+            <ProtectedRoute allowedRoles={['ADMIN']}>
               <Cliente />
             </ProtectedRoute>
           }
@@ -45,7 +46,7 @@ createRoot(document.getElementById('root')).render(
         <Route
           path="/geladinhos"
           element={
-            <ProtectedRoute>
+            <ProtectedRoute allowedRoles={['ADMIN']}>
               <Geladinhos />
             </ProtectedRoute>
           }
@@ -53,7 +54,7 @@ createRoot(document.getElementById('root')).render(
         <Route
           path="/cadastro-geladinho"
           element={
-            <ProtectedRoute>
+            <ProtectedRoute allowedRoles={['ADMIN']}>
               <CadastroGeladinho />
             </ProtectedRoute>
           }
