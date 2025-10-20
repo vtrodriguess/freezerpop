@@ -74,7 +74,7 @@ function Cliente() {
       <h1>GELADINHO DA TÂMARA</h1>
       <div className="top-buttons-clientes">
         <button type='button' onClick={handleLogout} className="logout-button">Sair</button>
-        <Link to="/admin" className="btn-voltar">Voltar</Link> </div>
+        <Link to="/admin" className="btn-voltar-cliente">Voltar</Link> </div>
       <hr />
 
       {users
