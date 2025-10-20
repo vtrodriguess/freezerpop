@@ -9,7 +9,7 @@ import ProtectedRoute from './components/ProtectedRoute';
 import Admin from './pages/Admin';
 import Cliente from './pages/Cliente';
 import Geladinhos from './pages/Geladinhos';
-import CadastroGeladinho from './pages/CadastroGeladinho'
+import CadastroGeladinho from './pages/CadastroGeladinho';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -18,10 +18,6 @@ createRoot(document.getElementById('root')).render(
         <Route path="/" element={<Login />} />
         <Route path="/login" element={<Login />} />
         <Route path="/cadastro" element={<Cadastro />} />
-        <Route path="/admin" element={<Admin />} />
-        <Route path="/clientes" element={<Cliente />} />
-        <Route path="/geladinhos" element={<Geladinhos />} />
-        <Route path="/cadastro-geladinho" element={<CadastroGeladinho />} />
         <Route
           path="/home"
           element={
@@ -30,7 +26,39 @@ createRoot(document.getElementById('root')).render(
             </ProtectedRoute>
           }
         />
+        <Route
+          path="/admin"
+          element={
+            <ProtectedRoute>
+              <Admin />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/clientes"
+          element={
+            <ProtectedRoute>
+              <Cliente />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/geladinhos"
+          element={
+            <ProtectedRoute>
+              <Geladinhos />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/cadastro-geladinho"
+          element={
+            <ProtectedRoute>
+              <CadastroGeladinho />
+            </ProtectedRoute>
+          }
+        />
       </Routes>
     </Router>
-  </StrictMode>,
+  </StrictMode>
 );
