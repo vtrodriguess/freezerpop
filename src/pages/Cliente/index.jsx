@@ -72,9 +72,10 @@ function Cliente() {
   return (
     <div className="container-clientes">
 
-      <button type='button' onClick={handleLogout} className="logout-button">Sair</button>
+      <div className="top-buttons-clientes">
+        <button type='button' onClick={handleLogout} className="logout-button">Sair</button>
+        <Link to="/admin" className="btn-voltar">Voltar</Link> </div>
       <h1>GELADINHO DA TÂMARA</h1>
-      <Link to="/admin" className="btn-voltar">Voltar</Link>
       <hr />
 
       {users

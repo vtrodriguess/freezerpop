@@ -134,6 +134,14 @@ hr {
   border-radius: 10px;
 }
 
+.top-buttons-clientes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
 @media (max-width: 480px) {
   h1 {
     font-size: 24px;
@@ -158,5 +166,17 @@ hr {
 
   .container-clientes {
     padding: 10px;
+  }
+
+  .top-buttons-clientes {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .top-buttons-clientes button,
+  .top-buttons-clientes .btn-voltar {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
   }
 }

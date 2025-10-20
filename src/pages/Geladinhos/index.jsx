@@ -94,15 +94,15 @@ function Geladinhos() {
     <div className="container-geladinhos-adm">
       <div className="header">
         <h1>GELADINHO DA TÂMARA</h1>
+      </div>
+      <div className="top-buttons">
         <button type="button" onClick={handleLogout} className="logout-button">
           Sair
         </button>
-      </div>
-
-      <Link to="/admin" className="btn-voltar">Voltar</Link>
-      <button className="cadastro-geladinho-gela" type="button" onClick={handleCadastro}>
-        Cadastrar Geladinho
-      </button>
+        <Link to="/admin" className="btn-voltar">Voltar</Link>
+        <button className="cadastro-geladinho-gela" type="button" onClick={handleCadastro}>
+          Cadastrar Geladinho
+        </button></div>
 
       <hr />
 

@@ -130,6 +130,14 @@ hr {
   cursor: pointer;
 }
 
+.top-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
 @media (max-width: 480px) {
   h1 {
     font-size: 24px;
@@ -155,13 +163,16 @@ hr {
     height: 35px;
   }
 
-  .logout-button,
-  .cadastro-geladinho-gela,
-  .btn-voltar {
+  .top-buttons {
+    flex-direction: column;
+    width: 90%;
+  }
+
+  .top-buttons button,
+  .top-buttons .btn-voltar {
     width: 100%;
     text-align: center;
     padding: 10px 0;
-    margin-bottom: 10px;
   }
 
   .logout-button {
@@ -174,6 +185,7 @@ hr {
 
   .btn-voltar {
     background-color: #6c63ff;
+    position: static;
   }
 
   hr {
