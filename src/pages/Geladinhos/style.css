@@ -99,7 +99,7 @@ hr {
   opacity: 0.8;
 }
 
-.cadastro-geladinho {
+.cadastro-geladinho-gela {
   display: flex;
   background-color: #4a4980;
   padding: 10px 20px;
@@ -156,11 +156,13 @@ hr {
   }
 
   .logout-button {
+    width: 100%;
     padding: 6px 12px;
     font-size: 14px;
+    text-align: center;
   }
 
-  .cadastro-geladinho {
+  .cadastro-geladinho-gela {
     width: 100%;
     text-align: center;
     padding: 10px 0;
@@ -171,6 +173,8 @@ hr {
     width: 100%;
     text-align: center;
     padding: 10px 0;
+    position: static;
+    margin-top: 10px;
   }
 
   hr {

@@ -100,7 +100,7 @@ function Geladinhos() {
       </div>
 
       <Link to="/admin" className="btn-voltar">Voltar</Link>
-      <button className="cadastro-geladinho" type="button" onClick={handleCadastro}>
+      <button className="cadastro-geladinho-gela" type="button" onClick={handleCadastro}>
         Cadastrar Geladinho
       </button>
 
