@@ -97,7 +97,7 @@ function Geladinhos() {
       </div>
       <div className="top-buttons-group">
         <button type="button" onClick={handleLogout} className="logout-button">Sair</button>
-        <Link to="/admin" className="btn-voltar">Voltar</Link>
+        <Link to="/admin" className="btn-voltar-geladinho">Voltar</Link>
       </div>
 
       <button className="cadastro-geladinho-gela" type="button" onClick={handleCadastro}>
