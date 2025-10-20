@@ -1,5 +1,5 @@
 import './style.css'
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useEffect, useState, useRef } from "react";
 import api from "../../services/api";
 
@@ -91,7 +91,7 @@ function Geladinhos() {
   }, []);
 
   return (
-    <div className="container">
+    <div className="container-geladinhos-adm">
       <div className="header">
         <h1>GELADINHO DA TÂMARA</h1>
         <button type="button" onClick={handleLogout} className="logout-button">
@@ -99,11 +99,8 @@ function Geladinhos() {
         </button>
       </div>
 
-      <div className="card1">
-        <p><strong>Saldo total:</strong> R$ {balance.toFixed(2)}</p>
-      </div>
-
-      <button className="cadastro" type="button" onClick={handleCadastro}>
+      <Link to="/admin" className="btn-voltar">Voltar</Link>
+      <button className="cadastro-geladinho" type="button" onClick={handleCadastro}>
         Cadastrar Geladinho
       </button>
 

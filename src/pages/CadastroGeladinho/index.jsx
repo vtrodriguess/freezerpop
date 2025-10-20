@@ -22,8 +22,8 @@ function CadastroGeladinho() {
   }
 
   return (
-    <div className='container'>
-      <form>
+    <div className='container-cadastrar-geladinho'>
+      <form className='cadastro-gela'>
         <h1>Cadastro de Geladinho</h1>
         <input placeholder="Sabor" name="Sabor" type="text" ref={inputSabor} />
         <input placeholder="" name="Preço" type="text" ref={inputPreco} />

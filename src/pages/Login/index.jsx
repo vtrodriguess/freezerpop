@@ -16,8 +16,6 @@ function Login() {
 
   async function loginCustomer() {
     const password = inputPassword.current.value
-    // const hashedPassword = CryptoJS.SHA256(password).toString();
-
     const response = await api.post('cliente/login', {
       email: inputEmail.current.value,
       password: password
@@ -43,8 +41,8 @@ function Login() {
         <h1>Login</h1>
         <input placeholder="E-mail" name="email" type="email" ref={inputEmail} />
         <input placeholder="Senha" name="senha" type="password" ref={inputPassword} />
-        <button type="button" className="login-acessar" onClick={loginCustomer}>Acessar</button>
-        <button className='login-cadastro' type="button" onClick={handleCadastro}>Cadastre-se</button>
+        <button type="button" className="login-acessar-ini" onClick={loginCustomer}>Acessar</button>
+        <button className='login-cadastro-ini' type="button" onClick={handleCadastro}>Cadastre-se</button>
       </form>
 
       <div></div>

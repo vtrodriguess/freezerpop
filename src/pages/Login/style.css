@@ -24,9 +24,10 @@ form {
 
 }
 
-button.login-acessar {
+button.login-acessar-ini {
   border-radius: 30px;
   background-color: #676491;
+  color: #fff;
   height: 40px;
   border: none;
   font-weight: bold;
@@ -44,7 +45,7 @@ input {
 
 }
 
-button.login-cadastro {
+button.login-cadastro-ini {
   border-radius: 30px;
   background-color: #fff;
   height: 40px;
@@ -66,10 +67,10 @@ button.login-cadastro {
     gap: 20px;
   }
 
-  button.login-acessar,
-  button.login-cadastro {
+  button.login-acessar-ini,
+  button.login-cadastro-ini {
     width: 100%;
-    height: 40px;
+    height: 38px;
     font-size: 14px;
   }
 
@@ -77,9 +78,5 @@ button.login-cadastro {
     width: 100%;
     font-size: 14px;
     height: 35px;
-  }
-
-  button.login-cadastro {
-    width: 100%;
   }
 }

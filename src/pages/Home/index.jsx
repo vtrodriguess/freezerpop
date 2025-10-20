@@ -100,7 +100,7 @@ function Home() {
   }, []);
 
   return (
-    <div className="container">
+    <div className="container-home">
 
       <button type='button' onClick={handleLogout} className="logout-button">Sair</button>
       <h1>GELADINHO DA TÂMARA</h1>

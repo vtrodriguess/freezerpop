@@ -155,4 +155,8 @@ hr {
     width: 100%;
     text-align: center;
   }
+
+  .container-clientes {
+    padding: 10px;
+  }
 }

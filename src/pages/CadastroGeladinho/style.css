@@ -1,9 +1,8 @@
-.container {
+.container-cadastrar-geladinho {
   display: flex;
+  align-items: center;
   flex-direction: column;
-  justify-content: center;
-  min-height: 100vh;
-  background: linear-gradient(135deg, #1f1f3a, #2e2d4e);
+  padding-top: 100px;
 }
 
 h1 {
@@ -14,19 +13,19 @@ h1 {
   letter-spacing: 1px;
 }
 
-form {
-  background-color: #2e2d4e;
+form.cadastro-gela {
   display: flex;
   flex-direction: column;
-  gap: 25px;
-  padding: 40px;
-  border-radius: 16px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-  width: 100%;
-  max-width: 420px;
+  gap: 30px;
+  padding: 30px;
+  border-radius: 10px;
+  background-color: #2e2d4e;
+  max-width: 50%;
+  width: 400px;
+  margin-bottom: 20px;
 }
 
-form input {
+form.cadastro-gela input {
   background-color: #363653;
   border: 1px solid #48456c;
   border-radius: 12px;
@@ -37,17 +36,17 @@ form input {
   transition: 0.2s;
 }
 
-form input::placeholder {
+form.cadastro-gela input::placeholder {
   color: #bdbde7;
 }
 
-form input:focus {
+form.cadastro-gela input:focus {
   border-color: #8b8ae1;
   box-shadow: 0 0 6px #8b8ae1;
   outline: none;
 }
 
-form button {
+form.cadastro-gela button {
   background-color: #8b8ae1;
   border: none;
   border-radius: 12px;
@@ -59,7 +58,7 @@ form button {
   transition: 0.2s;
 }
 
-form button.cadastrar-geladinho:hover {
+form.cadastro-gela button.cadastrar-geladinho:hover {
   background-color: #9b9ae8;
   transform: translateY(-2px);
   box-shadow: 0 4px 10px rgba(139, 138, 225, 0.3);
@@ -71,19 +70,27 @@ form button.cadastrar-geladinho:hover {
     margin-bottom: 20px;
   }
 
-  form {
+  form.cadastro-gela {
     padding: 25px;
     gap: 15px;
     width: 90%;
   }
 
-  form input,
-  form button {
+  form.cadastro-gela input {
     height: 40px;
     font-size: 14px;
   }
 
-  form button.cadastrar-geladinho {
+  form.cadastro-gela button {
+    height: 40px;
     font-size: 14px;
+  }
+
+  form.cadastro-gela button.cadastrar-geladinho {
+    font-size: 14px;
+  }
+
+  .container-cadastrar-geladinho {
+    padding-top: 50px;
   }
 }

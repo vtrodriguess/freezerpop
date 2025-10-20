@@ -39,7 +39,7 @@ function Admin() {
       <h1>GELADINHO DA TÂMARA</h1>
 
       <div className="admin-card1">
-        <p><strong>Saldo total:</strong> R$ {balance.toFixed(2)}</p>
+        <p><strong>Total de vendas:</strong> R$ {balance.toFixed(2)}</p>
       </div>
 
       <hr />

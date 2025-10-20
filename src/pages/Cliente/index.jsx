@@ -1,5 +1,5 @@
 import './style.css'
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useEffect, useState, useRef } from "react";
 import api from "../../services/api";
 
@@ -74,10 +74,7 @@ function Cliente() {
 
       <button type='button' onClick={handleLogout} className="logout-button">Sair</button>
       <h1>GELADINHO DA TÂMARA</h1>
-      <div className="card1">
-        <p><strong>Saldo:</strong> R$ {balance.toFixed(2)}</p>
-      </div>
-      <button onClick={() => attBalance(user.id, amounts[user.id])} className='btn-voltar'>Voltar</button>
+      <Link to="/admin" className="btn-voltar">Voltar</Link>
       <hr />
 
       {users
