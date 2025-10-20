@@ -107,7 +107,6 @@ function Home() {
       <div className="card1">
         <p><strong>Total a pagar:</strong> R$ {balance.toFixed(2)}</p>
       </div>
-
       <hr />
 
       {users.map((user) => (
