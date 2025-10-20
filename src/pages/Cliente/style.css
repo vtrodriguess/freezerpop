@@ -147,6 +147,10 @@ hr {
     font-size: 24px;
   }
 
+  .container-clientes {
+    padding: 10px;
+  }
+
   .card-clientes {
     flex-direction: column;
     align-items: flex-start;
@@ -155,28 +159,26 @@ hr {
   }
 
   .card-clientes button,
-  input[type="number"] {
-    width: 100%;
-  }
-
-  .btn-voltar {
-    width: 100%;
-    text-align: center;
-  }
-
-  .container-clientes {
-    padding: 10px;
+  .card-clientes input[type="number"] {
+    width: auto;
+    min-width: 80px;
+    padding: 5px 10px;
+    font-size: 14px;
   }
 
   .top-buttons-clientes {
     flex-direction: column;
+    align-items: center;
+    gap: 8px;
     width: 100%;
   }
 
   .top-buttons-clientes button,
   .top-buttons-clientes .btn-voltar {
-    width: 100%;
+    width: fit-content;
+    padding: 8px 16px;
+    margin: 0 auto;
+    font-size: 14px;
     text-align: center;
-    padding: 10px 0;
   }
 }
