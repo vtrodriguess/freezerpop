@@ -155,26 +155,25 @@ hr {
     height: 35px;
   }
 
-  .logout-button {
-    width: 100%;
-    padding: 6px 12px;
-    font-size: 14px;
-    text-align: center;
-  }
-
-  .cadastro-geladinho-gela {
+  .logout-button,
+  .cadastro-geladinho-gela,
+  .btn-voltar {
     width: 100%;
     text-align: center;
     padding: 10px 0;
     margin-bottom: 10px;
   }
 
+  .logout-button {
+    background-color: #e14b4b;
+  }
+
+  .cadastro-geladinho-gela {
+    background-color: #4a4980;
+  }
+
   .btn-voltar {
-    width: 100%;
-    text-align: center;
-    padding: 10px 0;
-    position: static;
-    margin-top: 10px;
+    background-color: #6c63ff;
   }
 
   hr {
