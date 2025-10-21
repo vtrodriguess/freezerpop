@@ -176,11 +176,20 @@ hr {
 
   .top-buttons-clientes {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 90%;
-    max-width: 300px;
-    margin: 0 auto 10px auto;
+    justify-content: flex-start;
+    gap: 10px;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .logout-button,
+  .btn-voltar-cliente {
+    position: static;
+    width: auto;
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 10px;
+    text-align: center;
   }
 
   .top-buttons-clientes .logout-button,
