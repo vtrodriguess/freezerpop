@@ -115,7 +115,7 @@ hr {
   opacity: 0.9;
 }
 
-.btn-voltar {
+.btn-voltar-geladinho {
   display: flex;
   background-color: #4a4980;
   padding: 10px 20px;
@@ -130,12 +130,8 @@ hr {
   cursor: pointer;
 }
 
-.top-buttons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 20px;
+.top-buttons-group {
+  position: relative;
 }
 
 @media (max-width: 480px) {

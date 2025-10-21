@@ -103,7 +103,7 @@ hr {
   opacity: 0.8;
 }
 
-.btn-voltar {
+.btn-voltar-cliente {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -117,18 +117,22 @@ hr {
   cursor: pointer;
   transition: all 0.3s;
   text-decoration: none;
+
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
 
-.btn-voltar:hover {
+.btn-voltar-cliente:hover {
   background-color: #6e6cd1;
   transform: translateY(-2px);
 }
 
-.btn-voltar i {
+.btn-voltar-cliente i {
   margin-right: 8px;
 }
 
-.btn-voltar.sm {
+.btn-voltar-cliente.sm {
   padding: 6px 12px;
   font-size: 12px;
   border-radius: 10px;
