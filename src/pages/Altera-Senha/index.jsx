@@ -32,7 +32,6 @@ function AlteraSenha() {
       console.error(err)
     }
   }
-
   return (
     <div className='cadastro-pessoa-container'>
       <form>
