@@ -53,7 +53,7 @@ function Home() {
       if (!token) return;
 
       try {
-        const response = await api.get("cliente/balance", {
+        const response = await api.get("/cliente/balance", {
           headers: { Authorization: `Bearer ${token}` }
         });
         setBalance(response.data);
@@ -71,7 +71,7 @@ function Home() {
       if (!token) return;
 
       try {
-        const response = await api.get("cliente/clientes", {
+        const response = await api.get("/cliente/clientes", {
           headers: { Authorization: `Bearer ${token}` }
         });
         setUser(response.data.name);

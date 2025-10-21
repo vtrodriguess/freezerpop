@@ -22,7 +22,7 @@ function AlteraSenha() {
     setError("")
 
     try {
-      await api.put('cliente/troca-senha', {
+      await api.put('/cliente/troca-senha', {
         email: inputEmail.current.value,
         newPassword: password
       })

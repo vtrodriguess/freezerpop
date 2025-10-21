@@ -12,7 +12,7 @@ function CadastroGeladinho() {
 
   async function createGeladinho() {
     const preco = Number(inputPreco.current.value.replace(',', '.'));
-    await api.post('geladinho/cadastrar', {
+    await api.post('/geladinho/cadastrar', {
       flavor: inputSabor.current.value,
       price: preco,
 

@@ -22,7 +22,7 @@ function Cadastro() {
     setError("")
 
     try {
-      await api.post('cliente/cadastrar', {
+      await api.post('/cliente/cadastrar', {
         name: inputName.current.value,
         email: inputEmail.current.value,
         password: password

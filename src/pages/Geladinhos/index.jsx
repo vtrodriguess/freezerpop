@@ -21,7 +21,7 @@ function Geladinhos() {
     const token = localStorage.getItem("token");
 
     try {
-      const usersFromApi = await api.get("/admin/geladinhos", {
+      const usersFromApi = await api.get("/admin/all-geladinhos", {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -36,20 +36,8 @@ function Geladinhos() {
   }
 
   async function attQuantity(id, quantity) {
-    await api.put(`estoque/${id}/atualizar?quantity=${quantity}`, {
+    await api.put(`/estoque/${id}/atualizar?quantity=${quantity}`, {
     })
-
-    window.location.reload()
-  }
-
-  async function increase(idFreezer, qtt) {
-    const customer = JSON.parse(localStorage.getItem("customer"));
-    await api.post('comprar', {
-      idCustomer: customer.id,
-      idFreezerPop: idFreezer,
-      quantity: Number(qtt)
-    })
-
 
     window.location.reload()
   }

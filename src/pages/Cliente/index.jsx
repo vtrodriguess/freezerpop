@@ -31,7 +31,7 @@ function Cliente() {
   }
 
   async function attBalance(id, amount) {
-    await api.put(`http://localhost:8080/admin/${id}/atualizar?amount=${amount}`, {
+    await api.put(`/admin/${id}/atualizar?amount=${amount}`, {
     })
 
     window.location.reload()
