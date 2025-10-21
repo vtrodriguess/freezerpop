@@ -21,7 +21,7 @@ function Geladinhos() {
     const token = localStorage.getItem("token");
 
     try {
-      const usersFromApi = await api.get("/geladinho/geladinhos", {
+      const usersFromApi = await api.get("/admin/geladinhos", {
         headers: {
           Authorization: `Bearer ${token}`
         }
