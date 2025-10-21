@@ -115,23 +115,47 @@ hr {
   opacity: 0.9;
 }
 
-.btn-voltar-geladinho {
+.top-buttons-group {
   display: flex;
-  background-color: #4a4980;
-  padding: 10px 20px;
-  border-radius: 12px;
-  border: none;
-  color: #fff;
-  font-weight: bold;
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  transition: opacity 0.2s;
-  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
 }
 
-.top-buttons-group {
-  position: relative;
+.btn-voltar-geladinho {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #8b8ae1;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 8px 16px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-decoration: none;
+
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.btn-voltar-geladinho:hover {
+  background-color: #6e6cd1;
+  transform: translateY(-2px);
+}
+
+.btn-voltar-geladinho i {
+  margin-right: 8px;
+}
+
+.btn-voltar-geladinho.sm {
+  padding: 6px 12px;
+  font-size: 12px;
+  border-radius: 10px;
 }
 
 @media (max-width: 480px) {
