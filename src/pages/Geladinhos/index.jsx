@@ -36,7 +36,7 @@ function Geladinhos() {
   }
 
   async function attQuantity(id, quantity) {
-    await api.put(`http://localhost:8080/estoque/${id}/atualizar?quantity=${quantity}`, {
+    await api.put(`estoque/${id}/atualizar?quantity=${quantity}`, {
     })
 
     window.location.reload()
