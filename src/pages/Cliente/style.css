@@ -208,7 +208,16 @@ hr {
 
   .btn-voltar-cliente {
     background-color: #6c63ff;
-    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn-voltar-cliente:hover {
+    background-color: #5950d4;
   }
 
   hr {
