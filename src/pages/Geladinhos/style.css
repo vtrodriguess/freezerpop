@@ -124,21 +124,16 @@ hr {
 }
 
 .btn-voltar-geladinho {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
   background-color: #8b8ae1;
   color: #fff;
   border: none;
-  border-radius: 12px;
+  border-radius: 10px;
   padding: 8px 16px;
   font-weight: bold;
-  font-size: 14px;
   cursor: pointer;
-  transition: all 0.3s;
-  text-decoration: none;
-
+  transition: opacity 0.2s;
   position: absolute;
+  text-decoration: none;
   top: 20px;
   right: 20px;
 }
@@ -146,16 +141,6 @@ hr {
 .btn-voltar-geladinho:hover {
   background-color: #6e6cd1;
   transform: translateY(-2px);
-}
-
-.btn-voltar-geladinho i {
-  margin-right: 8px;
-}
-
-.btn-voltar-geladinho.sm {
-  padding: 6px 12px;
-  font-size: 12px;
-  border-radius: 10px;
 }
 
 @media (max-width: 480px) {
@@ -224,12 +209,6 @@ hr {
 
   .logout-button {
     background-color: #e14b4b;
-  }
-
-  .btn-voltar-geladinho {
-    background-color: #6c63ff;
-    text-decoration: none;
-    font-weight: bold;
   }
 
   .top-buttons-group button:hover,

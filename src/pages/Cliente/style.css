@@ -113,6 +113,7 @@ hr {
   cursor: pointer;
   transition: opacity 0.2s;
   position: absolute;
+  text-decoration: none;
   top: 20px;
   right: 20px;
 }
@@ -120,16 +121,6 @@ hr {
 .btn-voltar-cliente:hover {
   background-color: #6e6cd1;
   transform: translateY(-2px);
-}
-
-.btn-voltar-cliente i {
-  margin-right: 8px;
-}
-
-.btn-voltar-cliente.sm {
-  padding: 6px 12px;
-  font-size: 12px;
-  border-radius: 10px;
 }
 
 .top-buttons-clientes {
@@ -202,21 +193,6 @@ hr {
 
   .logout-button {
     background-color: #e14b4b;
-  }
-
-  .btn-voltar-cliente {
-    background-color: #6c63ff;
-    color: #fff;
-    font-weight: bold;
-    padding: 8px 16px;
-    border-radius: 6px;
-    border: none;
-    cursor: pointer;
-    text-decoration: none;
-  }
-
-  .btn-voltar-cliente:hover {
-    background-color: #5950d4;
   }
 
   hr {
