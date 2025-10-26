@@ -35,20 +35,33 @@ h1 {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-.card {
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  width: 100%;
+  max-width: 900px;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.card-geladinho-user {
+  flex: 1 1 calc(50% - 15px);
+  max-width: 400px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #363563;
-  margin: 15px 0;
   padding: 15px;
-  width: 400px;
   border-radius: 12px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
   transition: transform 0.2s;
+  box-sizing: border-box;
+  word-wrap: break-word;
 }
 
-.card:hover {
+.card-geladinho-user:hover {
   transform: translateY(-3px);
 }
 
@@ -57,12 +70,12 @@ h1 {
   flex-direction: column;
 }
 
-.card p {
+.card-geladinho-user p {
   color: #fff;
   margin: 2px 0;
 }
 
-.card button {
+.card-geladinho-user button {
   border-radius: 15px;
   width: 100px;
   padding: 5px 10px;
@@ -74,7 +87,7 @@ h1 {
   transition: all 0.3s;
 }
 
-.card button:hover {
+.card-geladinho-user button:hover {
   background-color: #6e6cd1;
   transform: translateY(-2px);
 }
@@ -115,6 +128,14 @@ hr {
   opacity: 0.8;
 }
 
+.card-geladinho-user .actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+
+
 @media (max-width: 480px) {
   h1 {
     font-size: 24px;
@@ -128,22 +149,36 @@ hr {
     padding: 10px;
   }
 
-  .card {
-    flex-direction: column;
-    align-items: flex-start;
-    width: 90%;
-    padding: 10px;
-    gap: 8px;
+  .cards-container {
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
   }
 
-  .card button {
+  .card-geladinho-user {
+    flex: 1 1 100%;
     width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 10px;
+  }
+
+  .card-geladinho-user .texts {
+    margin-bottom: 10px;
+    align-items: center;
+  }
+
+
+  .card-geladinho-user button,
+  .card-geladinho-user input[type="number"] {
+    width: 30%;
+    max-width: none;
+    margin-bottom: 5px;
     font-size: 14px;
+    justify-content: center;
   }
 
   input[type="number"] {
-    width: 100%;
-    font-size: 14px;
     height: 35px;
   }
 

@@ -43,27 +43,35 @@ function Home() {
         idFreezerPop: idFreezer,
         quantity: Number(qtt)
       })
-      window.location.reload()
+      setUsers(prev =>
+        prev.map(g =>
+          g.id === idFreezer ? { ...g, quantity: g.quantity - Number(qtt) } : g
+        )
+      );
+
+      setQuantities(prev => ({ ...prev, [idFreezer]: "" }));
+      fetchBalance();
     }
+  }
+  async function fetchBalance() {
+    const token = localStorage.getItem("token");
+    if (!token) return;
+
+    try {
+      const response = await api.get("/cliente/balance", {
+        headers: { Authorization: `Bearer ${token}` }
+      });
+      setBalance(response.data);
+    } catch (error) {
+      console.error("Erro ao buscar balance:", error);
+    }
+
   }
 
   useEffect(() => {
-    async function fetchBalance() {
-      const token = localStorage.getItem("token");
-      if (!token) return;
-
-      try {
-        const response = await api.get("/cliente/balance", {
-          headers: { Authorization: `Bearer ${token}` }
-        });
-        setBalance(response.data);
-      } catch (error) {
-        console.error("Erro ao buscar balance:", error);
-      }
-    }
-
     fetchBalance();
   }, []);
+
 
   useEffect(() => {
     async function usuario() {
@@ -109,17 +117,29 @@ function Home() {
       </div>
       <hr />
 
-      {users.map((user) => (
-        <div key={user.id} className="card">
-          <div className="texts">
-            <p><strong>Sabor:</strong> {user.flavor}</p>
-            <p><strong>Preço:</strong> R$ {user.price}</p>
-            <p><strong>Quantidade:</strong> {user.quantity}</p>
+      <div className="cards-container">
+        {users.map((user) => (
+          <div key={user.id} className="card-geladinho-user">
+            <div className="texts">
+              <p><strong>Sabor:</strong> {user.flavor}</p>
+              <p><strong>Preço:</strong> R$ {user.price}</p>
+              <p><strong>Quantidade:</strong> {user.quantity}</p>
+            </div>
+            <div className="actions">
+              <button onClick={() => increase(user.id, quantities[user.id])}>Comprar</button>
+              <input
+                type="number"
+                min="0"
+                max={user.quantity}
+                step="1"
+                value={quantities[user.id] || ""}
+                onChange={(e) => handleChange(e, user.id)}
+                disabled={user.quantity === 0}
+              />
+            </div>
           </div>
-          <button onClick={() => increase(user.id, quantities[user.id])}>Comprar</button>
-          <input type="number" min="0" max={user.quantity} step="1" onChange={(e) => handleChange(e, user.id)} disabled={user.quantity === 0} />
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   )
 }

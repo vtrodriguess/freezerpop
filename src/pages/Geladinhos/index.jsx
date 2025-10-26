@@ -1,6 +1,8 @@
-import './style.css'
+import './style.css';
 import { useNavigate, Link } from "react-router-dom";
 import { useEffect, useState, useRef } from "react";
+import { confirmAlert } from 'react-confirm-alert';
+import 'react-confirm-alert/src/react-confirm-alert.css';
 import api from "../../services/api";
 
 function Geladinhos() {
@@ -9,7 +11,7 @@ function Geladinhos() {
   const handleCadastro = () => {
     navigate("/cadastro-geladinho");
   };
-  const [users, setUsers] = useState([])
+  const [geladinho, setGeladinho] = useState([])
   const [balance, setBalance] = useState(0)
   const [quantities, setQuantities] = useState({});
 
@@ -17,7 +19,7 @@ function Geladinhos() {
     setQuantities({ ...quantities, [id]: e.target.value });
   }
 
-  async function getUsers() {
+  async function getGeladinho() {
     const token = localStorage.getItem("token");
 
     try {
@@ -26,7 +28,7 @@ function Geladinhos() {
           Authorization: `Bearer ${token}`
         }
       });
-      setUsers(usersFromApi.data);
+      setGeladinho(usersFromApi.data);
     } catch (error) {
       console.error("Erro ao buscar os geladinhos:", error);
       if (error.response && error.response.status === 401) {
@@ -35,11 +37,37 @@ function Geladinhos() {
     }
   }
 
-  async function attQuantity(id, quantity) {
-    await api.put(`/estoque/${id}/atualizar?quantity=${quantity}`, {
-    })
+  async function deleteGeladinho(id) {
+    await api.delete(`/geladinho/delete/${id}`)
+    setGeladinho(prev => prev.filter(g => g.id !== id));
+  }
 
-    window.location.reload()
+  async function attQuantity(id, quantity) {
+    await api.put(`/estoque/${id}/atualizar?quantity=${quantity}`)
+    setGeladinho(prev =>
+      prev.map(g =>
+        g.id === id ? { ...g, quantity: g.quantity + Number(quantity) } : g
+      )
+    );
+
+    setQuantities(prev => ({ ...prev, [id]: "" }));
+  }
+
+  function confirmaDelete(id) {
+    confirmAlert({
+      title: 'Confirmação de Exclusão',
+      message: 'Tem certeza que deseja deletar este geladinho?',
+      buttons: [
+        {
+          label: 'Sim',
+          onClick: () => deleteGeladinho(id)
+        },
+        {
+          label: 'Não',
+          onClick: () => { }
+        }
+      ]
+    });
   }
 
   useEffect(() => {
@@ -74,7 +102,7 @@ function Geladinhos() {
     if (!token) {
       navigate("/login");
     } else {
-      getUsers();
+      getGeladinho();
     }
   }, []);
 
@@ -94,16 +122,17 @@ function Geladinhos() {
 
       <hr />
 
-      {users.map((user) => (
-        <div key={user.id} className="card">
+      {geladinho.map((geladinhos) => (
+        <div key={geladinhos.id} className="card-geladinhos-adm">
           <div className="texts">
-            <p><strong>Sabor:</strong> {user.flavor}</p>
-            <p><strong>Preço:</strong> R$ {user.price}</p>
-            <p><strong>Quantidade:</strong> {user.quantity}</p>
+            <p><strong>Sabor:</strong> {geladinhos.flavor}</p>
+            <p><strong>Preço:</strong> R$ {geladinhos.price}</p>
+            <p><strong>Quantidade:</strong> {geladinhos.quantity}</p>
           </div>
           <div className="actions">
-            <button onClick={() => attQuantity(user.id, quantities[user.id])}>Adicionar</button>
-            <input type="number" min="0" step="1" onChange={(e) => handleChange(e, user.id)} />
+            <button onClick={() => confirmaDelete(geladinhos.id)} className='button-delete'>Deletar</button>
+            <button onClick={() => attQuantity(geladinhos.id, quantities[geladinhos.id])}>Adicionar</button>
+            <input type="number" min="0" step="1" value={quantities[geladinhos.id] || ""} onChange={(e) => handleChange(e, geladinhos.id)} />
           </div>
         </div>
       ))}
